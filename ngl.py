@@ -20,7 +20,7 @@ logo()
 def deviceid():
     return "".join(random.choice("0123456789abcdefghijklmnopqrstuvwxyz-") for i in range(36))
 
-def send_request(user, q, i):
+def send_request(user, q):
     h = "https://ngl.link/api/submit"
     message = f"{q}"
     data = {
@@ -41,7 +41,7 @@ idd = int(input("How many times do you want to send requests: "))
 
 threads = []
 for i in range(1, idd + 1):
-    thread = threading.Thread(target=send_request, args=(user, q, i))
+    thread = threading.Thread(target=send_request, args=(user, q))
     threads.append(thread)
     thread.start()
 
