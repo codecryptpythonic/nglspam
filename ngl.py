@@ -30,7 +30,7 @@ def send_request(user, q, i):
     }
     try:
         k = requests.post(h, data=data).text
-        print(f"Sent request {i}!")
+        print("Sent request!")
     except Exception as e:
         print(f"Error: {e}")
     time.sleep(0.5)
